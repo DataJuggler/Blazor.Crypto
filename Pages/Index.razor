@@ -1,0 +1,118 @@
+﻿@page "/"
+@using DataJuggler.Core.Cryptography
+@using DataJuggler.UltimateHelper.Core
+
+<h1 class="pagetitle">Encryption Sample</h1>
+
+<div class="nuget">
+    Install Package: DataJuggler.Core.Cryptography *<br />
+    * This package uses Dot Net Core 3.1
+
+    <div class="fineprint">
+        For .Net Framework: Use Nuget package DataJuggler.Core.UltimateHelper.<br />
+        CryptographyHelper is included in this package with the same functionality.
+    </div>
+</div>
+
+@*if the message exists*@
+@if (TextHelper.Exists(message))
+{
+    <div class="messagestyle">
+        @message
+    </div>
+}
+
+<div class="lefthalf">
+    <div>
+        Text To Encrypt<br />
+        <textarea class="textinput" @bind="textToEncrypt"></textarea>
+    </div>
+    <div>
+        Key Code<br />
+        <input class="textinput" type="text" @bind="keyCode" />
+    </div>
+    <div>
+        <button class="button" @onclick="Encrypt">Encrypt</button>
+    </div>
+    <div>
+        Encrypted Result<br />
+        <textarea class="results" @bind="encryptedResult"></textarea>
+    </div>
+</div>
+
+<div class="righthalf">
+    <div>
+        Text To Decrypt<br />
+        <textarea class="textinput" @bind="textToDecrypt"></textarea>
+    </div>
+    <div>
+        Key Code<br />
+        <input class="textinput" type="text" @bind="keyCode" />
+    </div>
+    <div>
+        <button class="button" @onclick="Decrypt">Decrypt</button>
+    </div>
+    <div>
+        Decrypted Result<br />
+        <textarea class="results" @bind="decryptedResult"></textarea>
+    </div>
+</div>
+
+@code{
+    // locals
+    string textToEncrypt = "";
+    string textToDecrypt = "";
+    string encryptedResult = "";
+    string decryptedResult = "";
+    string keyCode = CryptographyHelper.DefaultPassword;
+    string message = "";
+
+    /// <summary>
+    /// This method encrypts the TextToEncrypt.
+    /// </summary>
+    private void Encrypt()
+    {
+        // If the textToEncrypt and keyCode strings exist
+        if (TextHelper.Exists(textToEncrypt, keyCode))
+        {
+            // clear any messages
+            message = "";
+            
+            // get the encryptedText
+            encryptedResult = CryptographyHelper.EncryptString(textToEncrypt, keyCode);
+        }
+        else if (!TextHelper.Exists(textToEncrypt))
+        {
+            // set the message
+            message = "You must enter the Text To Encrypt";
+        }
+        else if (!TextHelper.Exists(keyCode))
+        {
+            // set the message
+            message = "You must enter a KeyCode.";
+        }
+    }
+
+    /// <summary>
+    /// This method decrypts the TextToDecrypt.
+    /// </summary>
+    private void Decrypt()
+    {
+        // If the textToDecrypt string exists
+        if (TextHelper.Exists(textToDecrypt, keyCode))
+        {
+            // get thedecryptedText
+            decryptedResult = CryptographyHelper.DecryptString(textToDecrypt, keyCode);
+        }
+        else if (!TextHelper.Exists(textToDecrypt))
+        {
+            // set the message
+            message = "You must enter the Text To Decrypt";
+        }
+        else if (!TextHelper.Exists(keyCode))
+        {
+            // set the message
+            message = "You must enter a KeyCode.";
+        }
+    }
+}
