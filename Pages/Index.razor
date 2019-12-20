@@ -3,10 +3,14 @@
 @using DataJuggler.UltimateHelper.Core
 
 <h1 class="pagetitle">Encryption Sample</h1>
+<div class="codelinks">
+    https://github.com/DataJuggler/Blazor.Crypto<br />
+    https://github.com/DataJuggler/DataJuggler.Core.Cryptography
+</div>
 
 <div class="nuget">
-    Install Package: DataJuggler.Core.Cryptography *<br />
-    * This package uses Dot Net Core 3.1
+    Install Package: DataJuggler.Core.Cryptography * - Video <a class="linkurl" href="@videoUrl">How Safe Are Your Passwords</a><br />
+    * This package uses Dot Net Core 3.1 - Live Demo <a class="linkurl" href="https://blazorcrypto.datajuggler.com">blazorcrypto.datajuggler.com</a>
 
     <div class="fineprint">
         For .Net Framework: Use Nuget package DataJuggler.Core.UltimateHelper.<br />
@@ -69,7 +73,7 @@
     string decryptedResult = "";
     string keyCode = CryptographyHelper.DefaultPassword;
     string message = "";
-
+    string videoUrl = "https://youtu.be/w4NrmpeHykE";
 
     private void Clear()
     {

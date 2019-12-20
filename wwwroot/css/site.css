@@ -38,6 +38,16 @@
     top: 576px;
     left: 320px;
 }
+.codelinks
+{
+    position: fixed;
+    right: 24px;
+    top: 16px;
+    text-align: right;
+    color: midnightblue;
+    font-family: Verdana;
+    font-size: 12px;
+}
 .colorgold
 {
     color: #D88B49;
@@ -65,6 +75,11 @@
     position: fixed;
     left: 320px;
     top: 160px;
+}
+.linkurl
+{  
+    color: midnightblue;
+    font-family: Verdana;
 }
 .marginleft8
 {
@@ -139,6 +154,7 @@
     left: 320px;
     top: 8px;
     font-family: Verdana;
+    font-size: 36px;
     color: black;
 }
 .results
