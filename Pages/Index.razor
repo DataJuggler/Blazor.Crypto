@@ -57,6 +57,9 @@
         <textarea class="results" @bind="decryptedResult"></textarea>
     </div>
 </div>
+<div>
+    <button class="button clearbutton" @onclick="Clear">Clear</button>
+</div>
 
 @code{
     // locals
@@ -67,30 +70,14 @@
     string keyCode = CryptographyHelper.DefaultPassword;
     string message = "";
 
-    /// <summary>
-    /// This method encrypts the TextToEncrypt.
-    /// </summary>
-    private void Encrypt()
+
+    private void Clear()
     {
-        // If the textToEncrypt and keyCode strings exist
-        if (TextHelper.Exists(textToEncrypt, keyCode))
-        {
-            // clear any messages
-            message = "";
-            
-            // get the encryptedText
-            encryptedResult = CryptographyHelper.EncryptString(textToEncrypt, keyCode);
-        }
-        else if (!TextHelper.Exists(textToEncrypt))
-        {
-            // set the message
-            message = "You must enter the Text To Encrypt";
-        }
-        else if (!TextHelper.Exists(keyCode))
-        {
-            // set the message
-            message = "You must enter a KeyCode.";
-        }
+        // clear everything
+        textToDecrypt = "";
+        textToEncrypt = "";
+        encryptedResult = "";
+        decryptedResult = "";
     }
 
     /// <summary>
@@ -108,6 +95,32 @@
         {
             // set the message
             message = "You must enter the Text To Decrypt";
+        }
+        else if (!TextHelper.Exists(keyCode))
+        {
+            // set the message
+            message = "You must enter a KeyCode.";
+        }
+    }
+
+    /// <summary>
+    /// This method encrypts the TextToEncrypt.
+    /// </summary>
+    private void Encrypt()
+    {
+        // If the textToEncrypt and keyCode strings exist
+        if (TextHelper.Exists(textToEncrypt, keyCode))
+        {
+            // clear any messages
+            message = "";
+
+            // get the encryptedText
+            encryptedResult = CryptographyHelper.EncryptString(textToEncrypt, keyCode);
+        }
+        else if (!TextHelper.Exists(textToEncrypt))
+        {
+            // set the message
+            message = "You must enter the Text To Encrypt";
         }
         else if (!TextHelper.Exists(keyCode))
         {

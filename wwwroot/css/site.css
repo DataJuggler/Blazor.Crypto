@@ -26,6 +26,18 @@
     transform: scale(0.75);
     transform-origin: left;    
 }
+.clearbutton
+{
+    position: fixed;
+    top: 540px;
+    left: 320px;
+}
+.clearbutton2
+{
+    position: fixed;
+    top: 576px;
+    left: 320px;
+}
 .colorgold
 {
     color: #D88B49;
@@ -36,7 +48,7 @@
     height: 64px;
     width: 64px;
     position: fixed;
-    top: 280px;
+    top: 320px;
     left: 600px;
     transform: scale(0.75);
     transform-origin: left;    
@@ -47,7 +59,6 @@
     margin-bottom: 8px;
     font-family: Verdana;
     font-size: 10px;
-    color: darkgray;
 }
 .lefthalf
 {
@@ -66,7 +77,7 @@
     font-size: 16px;
     font-weight: bold;
     position: fixed;
-    top: 560px;
+    top: 584px;
 }
 .movedownnav
 {
@@ -91,6 +102,11 @@
 {
     position: relative;
     top: -1px;
+}
+.moveup6
+{
+    position: relative;
+    top: -6px;
 }
 .moveup24
 {
@@ -158,7 +174,7 @@
     height: 64px;
     width: 64px;
     position: fixed;
-    top: 280px;
+    top: 320px;
     left: 600px;
     transform: scale(0.75);
     transform-origin: left;    
