@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.Core.Cryptography" Version="1.0.9" />
+    <PackageReference Include="DataJuggler.Core.Cryptography" Version="1.0.10" />
   </ItemGroup>
 
 </Project>
