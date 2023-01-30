@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.Net5.Cryptography" Version="1.5.0" />
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="1.5.1" />
+    <PackageReference Include="DataJuggler.Cryptography" Version="7.0.0" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
